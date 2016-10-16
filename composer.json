@@ -1,0 +1,38 @@
+{
+    "name": "xloit/xloit-datetime",
+    "type": "library",
+    "description": "The DateTime Library extends Carbon",
+    "keywords": [
+        "xloit",
+        "datetime",
+        "library"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yudha Setiawan",
+            "email": "me@yudhasetiawan.com",
+            "homepage": "http://yudhasetiawan.com/"
+        }
+    ],
+    "require": {
+        "php": "^5.5 || ^7.0",
+        "nesbot/carbon": "~1.21",
+        "xloit/xloit-exception": "^0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "suggest": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Xloit\\DateTime\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-0": {
+            "Xloit\\DateTime\\Test\\": "tests/"
+        }
+    }
+}
