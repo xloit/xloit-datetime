@@ -80,22 +80,22 @@ class DateTime extends Carbon
     /**
      * Returns new Time object according to the specified DOS timestamp.
      *
-     * @param int                      $timestamp DOS timestamp
-     * @param DateTimeZone|string|null $timezone  (optional) A valid time zone or a DateTimeZone object
+     * @param int                      $timestamp DOS timestamp.
+     * @param DateTimeZone|string|null $timezone  (optional) A valid time zone or a DateTimeZone object.
      *
      * @return static
      */
     public static function createFromDOSTimestamp($timestamp, $timezone = null)
     {
-        $year      = (($timestamp >> 25) & 0x7f) + 1980;
-        $mon       = ($timestamp >> 21) & 0x0f;
-        $mday      = ($timestamp >> 16) & 0x1f;
-        $hours     = ($timestamp >> 11) & 0x1f;
-        $minutes   = ($timestamp >> 5) & 0x3f;
-        $seconds   = 2 * ($timestamp & 0x1f);
-        $timestamp = mktime($hours, $minutes, $seconds, $mon, $mday, $year);
+        $year          = (($timestamp >> 25) & 0x7f) + 1980;
+        $mon           = ($timestamp >> 21) & 0x0f;
+        $mday          = ($timestamp >> 16) & 0x1f;
+        $hours         = ($timestamp >> 11) & 0x1f;
+        $minutes       = ($timestamp >> 5) & 0x3f;
+        $seconds       = 2 * ($timestamp & 0x1f);
+        $unixTimestamp = mktime($hours, $minutes, $seconds, $mon, $mday, $year);
 
-        return static::createFromTimestamp($timestamp, $timezone);
+        return static::createFromTimestamp($unixTimestamp, $timezone);
     }
 
     /**
@@ -178,7 +178,7 @@ class DateTime extends Carbon
      *
      * @param string $format
      *
-     * @return static
+     * @return $this
      */
     public function setFormat($format)
     {
@@ -208,9 +208,9 @@ class DateTime extends Carbon
     /**
      * Move forward in time by x seconds.
      *
-     * @param int $seconds Number of seconds
+     * @param int $seconds Number of seconds.
      *
-     * @return static
+     * @return $this
      */
     public function forward($seconds)
     {
@@ -222,9 +222,9 @@ class DateTime extends Carbon
     /**
      * Move backward in time by x seconds.
      *
-     * @param int $seconds Number of seconds
+     * @param int $seconds Number of seconds.
      *
-     * @return static
+     * @return $this
      */
     public function rewind($seconds)
     {

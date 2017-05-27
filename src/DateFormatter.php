@@ -39,7 +39,7 @@ class DateFormatter
      *
      * @var string
      */
-    protected static $defaultFormat = PhpDateTime::ISO8601;
+    protected static $defaultFormat = PhpDateTime::ATOM;
 
     /**
      *
@@ -71,7 +71,7 @@ class DateFormatter
      *
      * @return string
      * @throws \InvalidArgumentException
-     * @throws Exception\InvalidArgumentException
+     * @throws \Xloit\DateTime\Exception\InvalidArgumentException
      */
     public static function format($dateTime, $format = null)
     {
@@ -98,7 +98,7 @@ class DateFormatter
      *
      *
      * @return DateTimeZone
-     * @throws Exception\InvalidArgumentException
+     * @throws \Xloit\DateTime\Exception\InvalidArgumentException
      */
     public static function getTimezone()
     {
@@ -115,7 +115,7 @@ class DateFormatter
      * @param DateTimeZone|string $timezone
      *
      * @return void
-     * @throws Exception\InvalidArgumentException
+     * @throws \Xloit\DateTime\Exception\InvalidArgumentException
      */
     public static function setTimezone($timezone)
     {
@@ -130,7 +130,7 @@ class DateFormatter
      * @param DateTimeZone|string|null $timezone
      *
      * @return DateTimeZone
-     * @throws Exception\InvalidArgumentException
+     * @throws \Xloit\DateTime\Exception\InvalidArgumentException
      */
     public static function safeCreateDateTimeZone($timezone)
     {
